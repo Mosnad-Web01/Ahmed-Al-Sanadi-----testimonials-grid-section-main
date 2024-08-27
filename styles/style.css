@@ -1,0 +1,219 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(210, 46%, 95%);
+	width: 100%;
+	min-height: 100vh;
+  }
+  
+  main {
+	padding: 10px;
+	width: 100%;
+	max-width: 1250px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+	  "testimonial-card--one testimonial-card--one testimonial-card--two testimonial-card--three"
+	  "testimonial-card--four testimonial-card--five testimonial-card--five testimonial-card--three";
+	gap: 20px;
+  }
+  
+  .testimonial-card--one {
+	grid-area: testimonial-card--one;
+	background-color: hsl(263, 55%, 52%);
+	position: relative;
+	z-index: 1;
+  }
+  
+  .testimonial-card--one::before {
+	content: url(../images/bg-pattern-quotation.svg);
+	position: absolute;
+	top: 2px;
+	right: 100px;
+	z-index: -1;
+  }
+  
+  .testimonial-card--two {
+	grid-area: testimonial-card--two;
+	background-color: hsl(217, 19%, 35%);
+  }
+  
+  .testimonial-card--three {
+	grid-area: testimonial-card--three;
+	background-color: hsl(0, 0%, 100%);
+  }
+  
+  .testimonial-card--four {
+	grid-area: testimonial-card--four;
+	background: hsl(0, 0%, 100%);
+  }
+  
+  .testimonial-card--five {
+	grid-area: testimonial-card--five;
+	background-color: hsl(219, 29%, 14%);
+  }
+  
+  .testimonial-card {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 20px;
+  }
+  
+  .user-profile {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  .user-profile img {
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, 0.804);
+	width: 40px;
+  }
+  
+  .user-details h3 {
+	font-size: 1.1rem;
+	color: white;
+	font-weight: 500;
+  }
+  
+  .user-details p {
+	font-size: 1rem;
+	color: #eeeeeeb3;
+	font-weight: 400;
+  }
+  
+  .user-profile--light h3 {
+	font-size: 1.3rem;
+	color: rgb(0, 0, 0);
+	font-weight: 700;
+  }
+  
+  .user-profile--light p {
+	font-size: 1rem;
+	color: hsla(0, 0%, 25%, 0.702);
+	font-weight: 400;
+  }
+  
+  .user-profile--light img {
+	border-radius: 50%;
+	border: 2px solid rgba(24, 24, 24, 0.804);
+  }
+  
+  .testimonial-content h4 {
+	font-size: 1.4rem;
+	color: white;
+	font-weight: 500;
+	line-height: 1.2;
+  }
+  
+  .testimonial-content p {
+	color: #eeeeee9b;
+	font-size: 0.9rem;
+	line-height: 1.1;
+	margin-top: 10px;
+  }
+  
+  .testimonial-content--light h4 {
+	font-size: 1.5rem;
+	color: rgb(0, 0, 0);
+	font-weight: 500;
+	line-height: 1.3;
+  }
+  
+  .testimonial-content--light p {
+	color: #4343439b;
+	font-size: 1rem;
+	line-height: 1.2;
+	margin-top: 10px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Adjustments for screens smaller than 796px */
+  @media (max-width: 796px) {
+	main {
+	  grid-template-columns: 1fr 1fr;
+	  grid-template-rows: auto;
+	  grid-template-areas:
+		"testimonial-card--one testimonial-card--two"
+		"testimonial-card--three testimonial-card--three"
+		"testimonial-card--four testimonial-card--five";
+	}
+  
+	.testimonial-card--one::before {
+	  right: 10px;
+	}
+  
+	.testimonial-card--one {
+	  grid-column: span 2;
+	}
+  
+	.testimonial-card--three {
+	  grid-column: span 2;
+	}
+  
+	.testimonial-card--five {
+	  grid-column: span 2;
+	}
+  }
+  
+  /* For tablets and smaller screens */
+  @media (max-width: 868px) {
+	main {
+	  grid-template-columns: 1fr 1fr;
+	  grid-template-rows: auto;
+	  grid-template-areas:
+		"testimonial-card--one testimonial-card--two"
+		"testimonial-card--three testimonial-card--three"
+		"testimonial-card--four testimonial-card--five";
+	}
+  
+	.testimonial-card--one::before {
+	  right: 10px;
+	}
+  
+	.testimonial-card--one {
+	  grid-column: span 2;
+	}
+  
+	.testimonial-card--three {
+	  grid-column: span 2;
+	}
+  
+	.testimonial-card--five {
+	  grid-column: span 2;
+	}
+  }
+  
+
+  @media (max-width: 560px) {
+	main {
+	  grid-template-columns: 1fr;
+	  grid-template-areas:
+		"testimonial-card--one"
+		"testimonial-card--two"
+		"testimonial-card--three"
+		"testimonial-card--four"
+		"testimonial-card--five";
+	}
+  
+	.testimonial-card--one,
+	.testimonial-card--two,
+	.testimonial-card--three,
+	.testimonial-card--four,
+	.testimonial-card--five {
+	  grid-column: span 1;
+	}
+  }
+  
